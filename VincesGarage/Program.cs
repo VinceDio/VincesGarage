@@ -1,27 +1,26 @@
 ﻿using System.Text.Json;
+using VincesGarage.Extensions;
 using VincesGarage.Models;
 
-var vehicle1 = new Vehicle
-{
-    Id = 1,
-    Year = 2016,
-    Make = "Ford",
-    Model = "Taurus",
-    Color = "Blue"
-};
+
+
+var vehicle1 = new Vehicle(year: 2016, make: "Ford", model: "Taurus");
+
+vehicle1.Id = 1;
+vehicle1.Color = "Blue";
 
 var vehicle2 = new Vehicle
 {
     Id = 2,
     Year = 2017,
-    Make = "Kia",
-    Model = "Sportage",
-    Color = "Silver"
+    Color = "Red",
+    Make = "Chevy",
+    Model = "Impala"
 };
 
 var maint = new Maintenance
 {
-    Date = DateTime.Now,
+    Date = DateTime.MaxValue,
     Vehicle = vehicle1,
     ServiceType = "Oil Change",
     Mileage = 101_200
